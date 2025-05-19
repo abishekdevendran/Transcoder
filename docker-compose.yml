@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  valkey: # Changed from redis to valkey
+    image: "valkey/valkey"
+    container_name: transcoder-valkey
+    ports:
+      - "6379:6379" # Valkey uses the same default port as Redis
+    volumes:
+      - valkey_data:/data # Persist Valkey data
+    command: valkey-server --appendonly yes # Enable AOF persistence (same command structure)
+
+volumes:
+  valkey_data:

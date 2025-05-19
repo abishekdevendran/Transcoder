@@ -1,0 +1,5 @@
+test_videos
+output_videos
+transcoder-core
+target
+*.avi
