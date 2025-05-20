@@ -2,7 +2,6 @@
 use std::path::Path;
 use std::process::{Command, Stdio};
 use std::io::{Error, ErrorKind}; // Or your custom error type in the future
-
 use log::{info, warn, error, debug, trace};
 
 // Import TranscodeOptions from the options module (sibling file)

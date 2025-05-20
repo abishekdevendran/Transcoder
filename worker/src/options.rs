@@ -1,6 +1,6 @@
-use log::warn; // Keep warn here if it's used in Default or methods we might add
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TranscodeOptions {
     pub output_resolution: String,
     pub video_codec: String,
@@ -18,7 +18,7 @@ impl Default for TranscodeOptions {
             video_codec: "libx264".to_string(),
             video_bitrate: Some("500k".to_string()),
             crf: None,
-            preset: "medium".to_string(), // You had medium, I'll stick to it from your clippy fix
+            preset: "medium".to_string(),
             audio_codec: "aac".to_string(),
             audio_bitrate: "96k".to_string(),
         }

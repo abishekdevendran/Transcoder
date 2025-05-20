@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   valkey: # Changed from redis to valkey
     image: "valkey/valkey"
